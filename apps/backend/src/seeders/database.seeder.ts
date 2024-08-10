@@ -17,6 +17,18 @@ export class DatabaseSeeder extends Seeder {
 
     const articles = [
       em.create(Article, {
+        author: authors.john,
+        slug: 'Test',
+        title: 'Testing',
+        description: 'Testing 1, 2, 3, ...',
+        tagList: [tags.coding.tag, tags.testing.tag],
+        body: 'Lorem testum ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id aliquam aliquam, nunc ipsum aliquet nunc, vitae aliq',
+        favoritesCount: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }),
+
+      em.create(Article, {
         author: authors.bennie,
         slug: 'how-to-do-something',
         title: 'How to do something',
@@ -48,6 +60,7 @@ export class DatabaseSeeder extends Seeder {
       javascript: em.create(Tag, { tag: 'javascript' }),
       angular: em.create(Tag, { tag: 'angular' }),
       react: em.create(Tag, { tag: 'react' }),
+      testing: em.create(Tag, { tag: 'testing' }),
     };
   }
 
